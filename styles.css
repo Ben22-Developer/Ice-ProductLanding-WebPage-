@@ -1,0 +1,102 @@
+html {
+    font-size: 16px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    letter-spacing: 0.1rem;
+    line-height: 2rem;
+}
+
+img {
+    width:100%;
+    height:100%;
+}
+
+h1 {
+    letter-spacing: 0;
+}
+
+.above-header-for-background-pic {
+    background: url(Pictures/King-Von-2_upscayl_5x_realesrgan-x4plus.png);
+    background-repeat: no-repeat;
+    background-size:100% 100%; 
+    /*background-size: contain; */
+    background-position: center;
+    height:35rem;
+}
+
+.above-header {
+    background-color: rgba(0, 0, 0, 0.749);
+    color:#d0eef5;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.above-header-logo-title-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.above-header-logo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5rem;
+}
+
+.above-header-logo {
+    width:5rem;
+    height:5rem;
+    margin-left: 2rem;
+}
+
+.above-header-navbar ul {
+    list-style: none;
+    display: flex;
+    margin-top: 2rem;
+    margin-right: 4rem;
+    justify-content: flex-end;
+    gap:4rem;
+    font-size: 1.5rem;
+}
+
+.above-header-intoduction {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5rem;
+}
+
+.above-header-intoduction p {
+    width:50%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.above-header-intoduction p span {
+    font-weight: bold;
+    letter-spacing: 0;
+}
+
+.above-header-intoduction h1 {
+    font-size:5rem;
+}
+
+.video-div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    display: block;
+}
