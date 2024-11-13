@@ -76,7 +76,7 @@ h1,nav {
     grid-template-columns: repeat(3,1fr);
     grid-template-areas: 
     "header header header"
-    "sidebar input-form ."
+    "sidebar input-form input-form"
     "sidebar aboutus aboutus"
     "sidebar video-div video-div"
     "our-newest-stock our-newest-stock our-newest-stock"
@@ -143,6 +143,8 @@ header h1 {
 
 .input-form {
     grid-area: input-form;
+    width:50%;
+    justify-self: center;
     background-color: aliceblue;
     padding: 0.5rem;
     display: grid;
@@ -479,6 +481,7 @@ footer {
     display:grid;
     grid-template-columns: repeat(7,1fr);
     grid-template-rows: repeat(2,1fr);
+    column-gap:0.5rem;
     
     }
     .my-instagram {
@@ -495,7 +498,8 @@ footer {
     }
     p {
         grid-row:2/3;
-        grid-column: 7/8;
+        grid-column: 6/8;
+        align-self: center;
     }
 }
 
@@ -536,8 +540,6 @@ footer {
     }
 } 
 
-
-
 @media (min-width:768px) and (max-width:1000px) {
     html {
         font-size: 15px;
@@ -575,19 +577,7 @@ footer {
             font-size: 1.5em;
         }
     }
-
-
-/*
-
-    header {
-        
-        ;
-    #nav-bar {
-        border: 1px solid;
-    }
-
-    
-  */  header {
+header {
 
         font-size: 13px;
     h1 {
@@ -605,10 +595,6 @@ footer {
             height:14em;
         }
     }
-    /*
-    #nav-bar {
-        font-size: 10.0px;
-    } */
     .sidebar {
         font-size:14px;
         .parteners-sponsors-logo-div {
@@ -643,7 +629,6 @@ footer {
         a:last-of-type {
             grid-area: third-of-type-a;
         }
-
         }
     }
 }
@@ -659,7 +644,7 @@ footer {
         grid-template-areas: 
         "our-newest-stock-title our-newest-stock-title our-newest-stock-title our-newest-stock-title"
         "chain chain rolex rolex"
-        ". bling bling ."
+        "bling bling . ."
         ;
     }
     .our-newest-stock h2 {
@@ -710,54 +695,183 @@ footer {
         height:3em;
     }
 }
-/*
-    #nav-bar {
-        font-size: 10.0px;
-    }
-*/
 }
 
+@media (min-width:640px) and (max-width:720px) {
 
-/*
-@media (min-width:768px) and (max-width:1000px) {
-
-.above-header {
-    font-size: 13px;
-
-    .above-header-navbar {
-        font-size: 1.5em;
+    .sponsors,.parteners {
+        width:80%;
+        font-size: 12px;
     }
 
-    .above-header-intoduction h1 {
-        font-size: 3.5em;
+    .sponsors article,.parteners article {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .above-header-intoduction p {
-        font-size: 1.5em;
+    .personal-contact {
+        width:80%;
+        text-align: center;
+    }
+
+    .input-form,.aboutus,.video-div {
+        margin:0 3rem 0 -3rem;
+    }
+    .our-newest-stock {
+        margin-right: 3rem;
     }
 }
 
+@media (width<640px) {
+    .page-content {
+        background-color:#d0eef5;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: 
+        "header header header"
+        "input-form input-form input-form"
+        "aboutus aboutus aboutus"
+        "video-div video-div video-div"
+        "our-newest-stock our-newest-stock our-newest-stock"
+        "sidebar sidebar sidebar"
+        ;
+        gap:1rem;
 
     header {
-        font-size: 13px;
-    
-    #nav-bar {
-        font-size: .8em;
+        grid-area: header;
     }
-    h1 {
-        font-size: 1.5em;
+    .input-form {
+        grid-area: input-form;
+        margin: 0;
     }
-    .logo-pic-div {
-        height:3em;
-        height:3em;
+    .aboutus {
+        grid-area: aboutus;
+        margin: 0 2rem 0 2rem;
+    }
+    .video-div {
+        grid-area: video-div;
+        margin: 0 2rem 0 2rem;
+    }
+
+    .our-newest-stock {
+        grid-area: our-newest-stock;
+        margin: 0 2rem 0 2rem;
+    }
+    .sidebar {
+        grid-area: sidebar;
+        margin:0 2rem 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+        "header-parteners header-parteners header-sponsors header-sponsors"
+        "parteners parteners sponsors sponsors"
+        "personal-contact personal-contact . ."
+        ;
+
+        h3:first-of-type {
+            grid-area: header-parteners;
+            justify-self: center;
+        }
+        .parteners {
+            grid-area: parteners;
+        }
+
+        h3:last-of-type {
+            grid-area: header-sponsors;
+            justify-self: center;
+        }
+        .sponsors {
+            grid-area: sponsors;
+        }
+        .personal-contact {
+            grid-area: personal-contact;
+        }
     }
 }
-    .video-div {
-        font-size: 14px;
-        iframe {
-            width:25em;
-            height:14em;
+header {
+    font-size: 11.8px;
+h1 {
+    font-size: 1.5em;
+}
+.logo-pic-div {
+    height:3em;
+    height:3em;
+}
+}
+}
+
+@media (width<480px) {
+    html {
+        font-size: 12px;
+    }
+    .our-newest-stock {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "top-new-stock-header"
+        "chain"
+        "rolex"
+        "bling"
+        ;
+        h2 {
+            grid-area: top-new-stock-header;
+        }
+        .chain {
+            grid-area: chain;
+        }
+        .rolex {
+            grid-area: rolex;
+        }
+        .bling {
+            grid-area: bling;
+        }
+        .chain,.rolex,.bling {
+            width:70%;
+            justify-self: center;
         }
     }
 
+        .video-div {
+            font-size: 9px;
+            iframe {
+                width:25em;
+                height:14em;
+            }
+        }
+        .above-header {
+            font-size: 15px;
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 0.8em;
+            }
+            nav ul {
+                font-size: 1em;
+                flex-wrap: wrap;
+                gap:0.5em;
+            }
+        }
+        header {
+            font-size:13px;
+            h1 {
+                font-size: 0.8em;
+            }
+            .logo-pic-div {
+                width:2em;
+                height:2em;
+            }
+            nav {
+                font-size: 0.6em;
+            }
+        }
+        #email {
+            font-size: 10px;
+        }
+        .sponsors article,.parteners article {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
 }
