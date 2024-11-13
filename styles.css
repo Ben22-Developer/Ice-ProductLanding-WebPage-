@@ -36,7 +36,7 @@ a:hover {
     background-repeat: no-repeat;
     background-size:100% 100%; 
     background-position: center;
-    height:100vh;
+    height:36rem;
 }
 
 .above-header {
@@ -98,7 +98,7 @@ a:hover {
 header {
     background-color: aliceblue;
     position: sticky;
-    top:0;
+    top:1rem;
     grid-area: header;
     display: grid;
     grid-template-columns: repeat(12,1fr);
@@ -460,7 +460,6 @@ header h1 {
             color:aliceblue;
             grid-area: bling-header;
             text-align: center;
-            height:var(--height-title-h3-newest-stock);
         }
         div {
             background-image: url(Pictures/ring-164_upscayl_5x_realesrgan-x4plus.png);
@@ -512,10 +511,6 @@ footer {
         grid-column: 6/8;
         align-self: center;
     }
-}
-
-:root {
-    --height-title-h3-newest-stock:100%;
 }
 
 @media (min-width:2180px) {
@@ -810,37 +805,38 @@ h1 {
     height:3em;
 }
 }
+.our-newest-stock {
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "top-new-stock-header"
+    "chain"
+    "rolex"
+    "bling"
+    ;
+    h2 {
+        grid-area: top-new-stock-header;
+    }
+    .chain {
+        grid-area: chain;
+    }
+    .rolex {
+        grid-area: rolex;
+    }
+    .bling {
+        grid-area: bling;
+    }
+    .chain,.rolex,.bling {
+        width:80%;
+        justify-self: center;
+    }
+}
 }
 
 @media (width<480px) {
     html {
         font-size: 12px;
     }
-    .our-newest-stock {
-        grid-template-columns: 100%;
-        grid-template-areas: 
-        "top-new-stock-header"
-        "chain"
-        "rolex"
-        "bling"
-        ;
-        h2 {
-            grid-area: top-new-stock-header;
-        }
-        .chain {
-            grid-area: chain;
-        }
-        .rolex {
-            grid-area: rolex;
-        }
-        .bling {
-            grid-area: bling;
-        }
-        .chain,.rolex,.bling {
-            width:70%;
-            justify-self: center;
-        }
-    }
+
 
         .video-div {
             font-size: 9px;
