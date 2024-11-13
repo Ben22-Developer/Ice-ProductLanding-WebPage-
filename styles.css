@@ -16,7 +16,7 @@ img {
     height:100%;
 }
 
-h1 {
+h1,nav {
     letter-spacing: 0;
 }
 
@@ -24,9 +24,8 @@ h1 {
     background: url(Pictures/King-Von-2_upscayl_5x_realesrgan-x4plus.png);
     background-repeat: no-repeat;
     background-size:100% 100%; 
-    /*background-size: contain; */
     background-position: center;
-    height:35rem;
+    height:100vh;
 }
 
 .above-header {
@@ -35,25 +34,6 @@ h1 {
     height:100%;
     display: flex;
     flex-direction: column;
-}
-
-.above-header-logo-title-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.above-header-logo-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:5rem;
-}
-
-.above-header-logo {
-    width:5rem;
-    height:5rem;
-    margin-left: 2rem;
 }
 
 .above-header-navbar ul {
@@ -83,25 +63,701 @@ h1 {
 
 .above-header-intoduction p span {
     font-weight: bold;
-    letter-spacing: 0;
 }
 
 .above-header-intoduction h1 {
     font-size:5rem;
 }
 
-.video-div {
+/*Section after Von's Welcoming pic*/
+.page-content {
+    background-color:#d0eef5;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+    "header header header"
+    "sidebar input-form ."
+    "sidebar aboutus aboutus"
+    "sidebar video-div video-div"
+    "our-newest-stock our-newest-stock our-newest-stock"
+    ;
+    gap:1rem;
+}
+
+header {
+    background-color: aliceblue;
+    position: sticky;
+    top:0;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-areas: 
+    "logo-pic-div header-h1 header-h1 header-h1 header-h1 . . . . nav-bar nav-bar nav-bar"
+    ;
+}
+
+.logo-pic-div {
+    width:3rem;
+    height:3rem;
+    grid-area: logo-pic-div;
+    margin-left: 1rem;
+}
+
+header h1 {
+    grid-area: header-h1;
+    font-size: 2rem;
+    align-self: center;
+    background:linear-gradient(#04b6de,rgb(10, 12, 12));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#nav-bar {
+    font-weight: bold;
+    letter-spacing: 0;
+    background:linear-gradient(#028ead,rgb(10, 12, 12));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    grid-area: nav-bar;
+    align-content:center;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-areas: 
+    "nav-bar-home nav-bar-aboutus nav-bar-contactus"
+    ;
+}
+
+#nav-bar a:first-of-type {
+    grid-area: nav-bar-home;
+    justify-self: center;
+}
+
+#nav-bar a:nth-of-type(2) {
+    grid-area: nav-bar-aboutus;
+}
+
+#nav-bar a:last-of-type {
+    grid-area: nav-bar-contactus;
+    margin-right: 1rem;
+}
+
+.input-form {
+    grid-area: input-form;
+    background-color: aliceblue;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "input-form-h3"
+    "form"
+    ;
+}
+
+.input-form h3 {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    grid-area: input-form-h3;
+    justify-self: center;
+    align-self: center;
+    background-color: #2fb3d1;
+    color: aliceblue;
+}
+
+#form {
+    grid-area: form;
+}
+
+#form label {
+    font-weight: bold;
+    color:#025c70;
     display: flex;
-    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+#form input {
+    display: block;
+    margin: auto;
+}
+
+#form input:first-of-type {
+    width:90%;
+    margin:1rem auto;
+    height:2.5rem;
+    border:1px solid #2fb3d1;
+    border-radius: 0.5rem;
+}
+
+#form input:last-of-type {
+    padding: 0 2rem;
+    background-color: #2fb3d1;
+    color: aliceblue;
+    font-weight: bold;
+    border:none;
+    animation:sign-in-button 1s infinite alternate;
+}
+
+@keyframes sign-in-button {
+    to {
+        background-color: #2fb3d1;
+        color:#acf0ff;
+    }
+}
+
+.sidebar {
+    grid-area: sidebar;
+    margin-left: 2rem;
+}
+
+.parteners-sponsors-logo-div {
+    width:2rem;
+    height:2rem;
+}
+
+.sponsors article,.parteners article {
+    background-color: aliceblue;
+    color:#023743;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    width: 80%;
+    display: flex;
+    gap:1rem;
+}
+
+.sponsors article p,.parteners article p {
+    letter-spacing: 0;
+}
+
+.sidebar h3:first-of-type,.sidebar h3:last-of-type {
+    width: 80%;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    color:#023743;
+    letter-spacing: 0;
+}
+
+.parteners article:first-of-type {
+    .parteners-sponsors-logo-div {
+        width:5rem;
+    }
+}
+
+.fa-amazon {
+    font-size: 1.5rem;
+    margin: auto 0;
+}
+
+.sponsors article:first-of-type{
+    .parteners-sponsors-logo-div {
+        height:1.5rem;
+        margin-top:0.2rem;
+    }
+}
+
+.aboutus  {
+    grid-area: aboutus;
+    background-color: aliceblue;
+    margin-right:2rem;
+    padding: 1rem;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header-about-us"
+    "get-your-design"
+    "delivery"
+    "assurance"
+    ;
+    gap:1.5rem;
+
+    #h2aboutus {
+        background-color: #d0eef5;
+        grid-area:header-about-us;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    p,h3,h2 {
+        letter-spacing: 0.1rem;
+    }   
+    h2,h3 {
+        color:#03647a;
+    }
+    p {
+    line-height: 1.5rem;
+    }
+
+    div:first-of-type {
+        grid-area: get-your-design;
+    }    
+    div:nth-of-type(2) {
+        grid-area: delivery;
+    }
+    div:last-of-type {
+        grid-area: assurance;
+    }
+
+    .aboutus-single-point {
+        display: grid;
+        grid-template-columns: 10% 90%;
+        grid-template-areas: 
+        "icon message"
+        ;
+    }
+    .fa {
+        grid-area: icon;   
+        align-self: center;
+        justify-self: start;
+        font-size: 2rem;
+        color:#03647a;
+    }
+}
+
+.video-div { 
+    grid-area: video-div;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: aliceblue;
+    margin-right: 2rem;
+    padding-bottom: 0.5rem;
+    h2 {
+        margin: 0.5rem 0;
+        padding: 0 1rem;
+        background-color: #d0eef5;
+        color:#03647a;
+        letter-spacing: 0;
+    }
+    iframe {
+        width:35rem;
+        height:20rem;
+    }
 }
 
-label {
-    display: block;
+.our-newest-stock {
+    background-color: aliceblue;
+    grid-area: our-newest-stock;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas:  
+    "title-our-newest-stock title-our-newest-stock title-our-newest-stock"
+    "chain rolex bling"
+    ;
+    gap:2rem;
+    margin:2rem;
+    padding:2rem;
+    h2 {
+        grid-area: title-our-newest-stock;
+        display: flex;
+        justify-content: center;
+        background-color: #d0eef5;
+        color:#03647a;
+    }
+
+.chain {
+        background-color: #03647a96;
+        grid-area: chain;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "chain-header"
+        "div"
+        ;
+        h3 {
+            background-color:#03647a60;
+            color:aliceblue;
+            grid-area: chain-header;
+            text-align: center;
+        }
+        div {
+            background-image: url(Pictures/ice-chain\ 55M_upscayl_5x_realesrgan-x4plus.png);
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            align-self: start;
+        }
+        p {
+            font-weight: bold;
+        }
+        h4,p {
+            background-color: #03647a96;
+            color:aliceblue;
+            letter-spacing: 0rem;
+        }
+        h4 {
+            font-size: 1.5rem;
+            color: #004453;
+        }
+    }
+
+.rolex {
+        background-color: #03647a96;
+        grid-area: rolex;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2,max-content);
+        grid-template-areas: 
+        "rolex-header"
+        "div"
+        ;
+        h3 {
+            background-color:#03647a60;
+            color:aliceblue;
+            grid-area: rolex-header;
+            height: max-content;
+            text-align: center;
+            }
+        div {
+            background-image: url(Pictures/rolex-watch-25K_upscayl_5x_realesrgan-x4plus.png);
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            align-self: start;
+            justify-self: center;
+            grid-row: 2/3;
+
+        }
+        p {
+            font-weight: bold;
+        }
+        h4,p {
+            background-color: #03647a96;
+            color:aliceblue;
+            letter-spacing: 0rem;
+        }
+        h4 {
+            font-size: 1.5rem;
+            color: #004453;
+        }
+    }
 }
 
-.parteners-sponsors-logo {
-    width:2rem;
-    height:1rem; 
+.bling {
+        background-color: #03647a96;
+        grid-area: bling;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "bling-header"
+        "div"
+        ;
+        h3 {
+            background-color:#03647a60;
+            color:aliceblue;
+            grid-area: bling-header;
+            text-align: center;
+            height:var(--height-title-h3-newest-stock);
+        }
+        div {
+            background-image: url(Pictures/ring-164_upscayl_5x_realesrgan-x4plus.png);
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            align-self: start;
+        }
+        p {
+            font-weight: bold;
+        }
+        h4,p {
+            background-color: #03647a96;
+            color:aliceblue;
+            letter-spacing: 0rem;
+        }
+        h4 {
+            font-size: 1.5rem;
+            color: #004453;
+        }
+}
+
+footer {
+    background-color:#d0eef5;
+    .links {
+    background-color: #03647a96;
+    margin:0 2rem;
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(2,1fr);
+    
+    }
+    .my-instagram {
+        grid-row:1/2;
+        grid-column: 5/6;
+    }
+    .my-facebook {
+        grid-row:1/2;
+        grid-column:6/7;
+    }
+    .my-github {
+        grid-row:1/2;
+        grid-column: 7/8;
+    }
+    p {
+        grid-row:2/3;
+        grid-column: 7/8;
+    }
+}
+
+:root {
+    --height-title-h3-newest-stock:100%;
+}
+
+@media (min-width:2180px) {
+    html {
+    font-size: 30px;
+    }
+}
+
+@media (min-width:1780px) and (max-width:2180px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media (min-width:1440px) and (max-width:1780px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1440px) {
+    html {
+        font-size: 16px;
+    }
+} 
+
+@media (min-width:1000px) and (max-width:1200px) {
+    #nav-bar {
+        font-size: 14px;
+    a {
+        font-size: 1em;
+    }
+    }
+} 
+
+
+
+@media (min-width:768px) and (max-width:1000px) {
+    html {
+        font-size: 15px;
+    }
+
+
+    header {
+        grid-template-areas: 
+        "logo-pic-div header-h1 header-h1 header-h1 header-h1 . . nav-bar nav-bar nav-bar nav-bar nav-bar"
+        ;
+
+        #nav-bar {
+            grid-area: nav-bar;
+        }
+    }
+
+
+
+}
+
+@media (min-width:768px) and (max-width:870px) {
+    
+    .above-header {
+        font-size: 13px;
+    
+        .above-header-navbar {
+            font-size: 1.5em;
+        }
+    
+        .above-header-intoduction h1 {
+            font-size: 3.5em;
+        }
+    
+        .above-header-intoduction p {
+            font-size: 1.5em;
+        }
+    }
+
+
+/*
+
+    header {
+        
+        ;
+    #nav-bar {
+        border: 1px solid;
+    }
+
+    
+  */  header {
+
+        font-size: 13px;
+    h1 {
+        font-size: 1.5em;
+    }
+    .logo-pic-div {
+        height:3em;
+        height:3em;
+    }
+}
+    .video-div {
+        font-size: 14px;
+        iframe {
+            width:25em;
+            height:14em;
+        }
+    }
+    /*
+    #nav-bar {
+        font-size: 10.0px;
+    } */
+    .sidebar {
+        font-size:14px;
+        .parteners-sponsors-logo-div {
+            width:2em;
+            height:2em;
+        }
+    }
+}
+
+@media (max-width:870px) {
+    header {
+        grid-template-areas: 
+        "logo-pic-div header-h1 header-h1 header-h1 header-h1 . nav-bar nav-bar nav-bar nav-bar nav-bar nav-bar"
+        ;
+        #nav-bar {
+            
+            grid-area: nav-bar;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-areas: 
+            "first-of-type-a second-of-type-a third-of-type-a"
+            ;
+        
+         a:first-of-type {
+            grid-area: first-of-type-a;
+            
+        }
+
+        a:nth-of-type(2) {
+            grid-area: second-of-type-a;
+        }
+
+        a:last-of-type {
+            grid-area: third-of-type-a;
+        }
+
+        }
+    }
+}
+
+@media (min-width:480px) and (max-width:768px) {
+    html {
+        font-size: 14px;
+    }
+    .our-newest-stock {
+        border: 1px solid;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+        "our-newest-stock-title our-newest-stock-title our-newest-stock-title our-newest-stock-title"
+        "chain chain rolex rolex"
+        ". bling bling ."
+        ;
+    }
+    .our-newest-stock h2 {
+        grid-area: our-newest-stock-title;
+    }
+
+    .chain {
+        grid-template-areas: chain;
+    }
+    
+    .rolex {
+        grid-template-areas: rolex;
+    }
+
+    .bling {
+        grid-area: bling;
+    }
+    .video-div {
+        font-size: 14px;
+        iframe {
+            width:25em;
+            height:14em;
+        }
+    }
+    .above-header {
+        font-size: 13px;
+    
+        .above-header-navbar {
+            font-size: 1.5em;
+        }
+    
+        .above-header-intoduction h1 {
+            font-size: 3.5em;
+        }
+    
+        .above-header-intoduction p {
+            font-size: 1.5em;
+        }
+    }
+
+    header {
+        font-size: 13px;
+    h1 {
+        font-size: 1.5em;
+    }
+    .logo-pic-div {
+        height:3em;
+        height:3em;
+    }
+}
+/*
+    #nav-bar {
+        font-size: 10.0px;
+    }
+*/
+}
+
+
+/*
+@media (min-width:768px) and (max-width:1000px) {
+
+.above-header {
+    font-size: 13px;
+
+    .above-header-navbar {
+        font-size: 1.5em;
+    }
+
+    .above-header-intoduction h1 {
+        font-size: 3.5em;
+    }
+
+    .above-header-intoduction p {
+        font-size: 1.5em;
+    }
+}
+
+
+    header {
+        font-size: 13px;
+    
+    #nav-bar {
+        font-size: .8em;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .logo-pic-div {
+        height:3em;
+        height:3em;
+    }
+}
+    .video-div {
+        font-size: 14px;
+        iframe {
+            width:25em;
+            height:14em;
+        }
+    }
+
 }
