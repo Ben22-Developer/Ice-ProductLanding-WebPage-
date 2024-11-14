@@ -118,6 +118,7 @@ header h1 {
     grid-area: header-h1;
     font-size: 2rem;
     align-self: center;
+    justify-self: center;
     background:linear-gradient(#04b6de,rgb(10, 12, 12));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -613,7 +614,7 @@ header {
 @media (max-width:870px) {
     header {
         grid-template-areas: 
-        "logo-pic-div header-h1 header-h1 header-h1 header-h1 . nav-bar nav-bar nav-bar nav-bar nav-bar nav-bar"
+        "logo-pic-div header-h1 header-h1 header-h1 header-h1 header-1 nav-bar nav-bar nav-bar nav-bar nav-bar nav-bar"
         ;
         #nav-bar {
             
@@ -697,8 +698,8 @@ header {
         font-size: 1.5em;
     }
     .logo-pic-div {
-        height:3em;
-        height:3em;
+        width:2em;
+        height:2em;
     }
 }
 }
@@ -801,8 +802,8 @@ h1 {
     font-size: 1.5em;
 }
 .logo-pic-div {
-    height:3em;
-    height:3em;
+    width:2em;
+    height:2em;
 }
 }
 .our-newest-stock {
