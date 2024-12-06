@@ -2,8 +2,6 @@ html {
     font-size: 16px;
     scroll-behavior: smooth;
 }
-
-
 * {
     margin: 0;
     padding: 0;
@@ -11,52 +9,47 @@ html {
     letter-spacing: 0.1rem;
     line-height: 2rem;
 }
-
+body {
+    background-color:#d0eef5;
+}
 img {
     width:100%;
     height:100%;
 }
-
 h1,nav {
     letter-spacing: 0;
 }
-
 a {
     text-decoration: none;
     color:aliceblue;
 }
-
 a:hover {
     text-decoration: underline;
-    color:aqua;
 }
-
 .above-header-for-background-pic {
     background: url(Pictures/King-Von-2_upscayl_5x_realesrgan-x4plus.png);
     background-repeat: no-repeat;
-    background-size:100% 100%; 
+    background-size:cover; 
     background-position: center;
-    height:36rem;
+    height:100vh;
 }
-
 .above-header {
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, 65%);
     color:#d0eef5;
     height:100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap:1rem;
 }
-
 .above-header-navbar ul {
     list-style: none;
     display: flex;
-    margin-top: 2rem;
-    margin-right: 4rem;
+    margin: 2rem 0 0 0;
     justify-content: flex-end;
-    gap:4rem;
+    gap:2rem;
     font-size: 1.5rem;
 }
-
 .above-header-intoduction {
     flex-grow: 1;
     display: flex;
@@ -65,24 +58,24 @@ a:hover {
     align-items: center;
     gap:5rem;
 }
-
 .above-header-intoduction p {
-    width:50%;
+    width: 90%;
     font-size: 1.5rem;
     text-align: center;
 }
-
 .above-header-intoduction p span {
     font-weight: bold;
 }
-
 .above-header-intoduction h1 {
-    font-size:5rem;
+    line-height: 4rem;
+    font-size:4rem;
+    text-align: center;
+} 
+.fa-diamond {
+    color:#d0eef5;
 }
-
 /*Section after Von's Welcoming pic*/
 .page-content {
-    background-color:#d0eef5;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-areas: 
@@ -94,65 +87,46 @@ a:hover {
     ;
     gap:1rem;
 }
-
 header {
     background-color: aliceblue;
     position: sticky;
     top:1rem;
-    grid-area: header;
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-areas: 
-    "logo-pic-div header-h1 header-h1 header-h1 header-h1 . . . . nav-bar nav-bar nav-bar"
-    ;
+    z-index: 1;
+    grid-area:header;
+    display: flex;
+    gap:5rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    .logo {
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
+        gap:2rem;
+        .logo-pic-div {
+            width:3rem;
+            height:3rem;  
+        }
+        h1 {
+            font-size: 2rem;
+            background:linear-gradient(#028ead,rgb(10, 12, 12));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    nav {
+        margin:0 1rem 0 auto;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap:3rem;
+        a {
+        color: #004453;
+        }
+    }
+    * {
+        flex-shrink: 0;
+    }
 }
-
-.logo-pic-div {
-    width:3rem;
-    height:3rem;
-    grid-area: logo-pic-div;
-    margin-left: 1rem;
-}
-
-header h1 {
-    grid-area: header-h1;
-    font-size: 2rem;
-    align-self: center;
-    justify-self: center;
-    background:linear-gradient(#04b6de,rgb(10, 12, 12));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#nav-bar {
-    font-weight: bold;
-    letter-spacing: 0;
-    background:linear-gradient(#028ead,rgb(10, 12, 12));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    grid-area: nav-bar;
-    align-content:center;
-    display: grid;
-    grid-template-columns:repeat(3,1fr);
-    grid-template-areas: 
-    "nav-bar-home nav-bar-aboutus nav-bar-contactus"
-    ;
-}
-
-#nav-bar a:first-of-type {
-    grid-area: nav-bar-home;
-    justify-self: center;
-}
-
-#nav-bar a:nth-of-type(2) {
-    grid-area: nav-bar-aboutus;
-}
-
-#nav-bar a:last-of-type {
-    grid-area: nav-bar-contactus;
-    margin-right: 1rem;
-}
-
 .input-form {
     grid-area: input-form;
     width:50%;
@@ -166,7 +140,6 @@ header h1 {
     "form"
     ;
 }
-
 .input-form h3 {
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
@@ -176,102 +149,81 @@ header h1 {
     background-color: #2fb3d1;
     color: aliceblue;
 }
-
 #form {
     grid-area: form;
 }
-
 #form label {
     font-weight: bold;
     color:#025c70;
     display: flex;
     justify-content: center;
 }
-
 #form input {
     display: block;
     margin: auto;
 }
-
 #form input:first-of-type {
     width:90%;
     margin:1rem auto;
     height:2.5rem;
     border:1px solid #2fb3d1;
     border-radius: 0.5rem;
+    font-size: .8rem;
 }
-
 #form input:last-of-type {
     padding: 0 2rem;
     background-color: #2fb3d1;
     color: aliceblue;
     font-weight: bold;
     border:none;
-    animation:sign-in-button 1s infinite alternate;
 }
-
-@keyframes sign-in-button {
-    to {
-        background-color: #2fb3d1;
-        color:#acf0ff;
-    }
-}
-
-.sidebar {
+aside {
     grid-area: sidebar;
     margin-left: 2rem;
 }
-
 .parteners-sponsors-logo-div {
     width:2rem;
     height:2rem;
 }
-
 .sponsors article,.parteners article {
     background-color: aliceblue;
     color:#023743;
     font-weight: bold;
     margin-bottom: 1rem;
-    padding: 0.5rem 0rem 0.5rem 1rem;
+    padding: 1rem 0rem 1rem 1rem;
     width: 80%;
     display: flex;
     gap:1rem;
 }
-
 .sponsors article p,.parteners article p {
     letter-spacing: 0;
 }
-
-.sidebar h3:first-of-type,.sidebar h3:last-of-type {
+aside h3:first-of-type,.sidebar h3:last-of-type {
     width: 80%;
     padding: 0.5rem 0rem 0.5rem 1rem;
     color:#023743;
     letter-spacing: 0;
 }
-
 .parteners article:first-of-type {
     .parteners-sponsors-logo-div {
         width:5rem;
     }
 }
-
 .fa-amazon {
     font-size: 1.5rem;
     margin: auto 0;
 }
-
 .sponsors article:first-of-type{
     .parteners-sponsors-logo-div {
         height:1.5rem;
         margin-top:0.2rem;
     }
 }
-
 .aboutus  {
     grid-area: aboutus;
     background-color: aliceblue;
     margin-right:2rem;
-    padding: 1rem;
+    padding: 1rem 2rem 1rem 1rem;
     height: max-content;
     display: grid;
     grid-template-columns: 100%;
@@ -282,7 +234,6 @@ header h1 {
     "assurance"
     ;
     gap:1.5rem;
-
     #h2aboutus {
         background-color: #d0eef5;
         grid-area:header-about-us;
@@ -299,7 +250,6 @@ header h1 {
     p {
     line-height: 1.5rem;
     }
-
     div:first-of-type {
         grid-area: get-your-design;
     }    
@@ -309,13 +259,13 @@ header h1 {
     div:last-of-type {
         grid-area: assurance;
     }
-
     .aboutus-single-point {
         display: grid;
         grid-template-columns: 10% 90%;
         grid-template-areas: 
         "icon message"
         ;
+        gap:1rem;
     }
     .fa {
         grid-area: icon;   
@@ -325,561 +275,203 @@ header h1 {
         color:#03647a;
     }
 }
-
 .video-div { 
     grid-area: video-div;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap:2rem;
     background-color: aliceblue;
     margin-right: 2rem;
-    padding-bottom: 0.5rem;
+    padding: 1rem 0;
     h2 {
-        margin: 0.5rem 0;
-        padding: 0 1rem;
+        width: 90%;
+        display: flex;
+        justify-content: center;
         background-color: #d0eef5;
         color:#03647a;
         letter-spacing: 0;
     }
     iframe {
-        width:35rem;
-        height:20rem;
+        width:70%;
+        height:15rem;
     }
 }
-
 .our-newest-stock {
     background-color: aliceblue;
     grid-area: our-newest-stock;
+    margin:0 2rem;
+    padding:1rem 0;  
     display:grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-areas:  
-    "title-our-newest-stock title-our-newest-stock title-our-newest-stock"
-    "chain rolex bling"
-    ;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "title"
+    "newest_products";
     gap:2rem;
-    margin:2rem;
-    padding:2rem;
     h2 {
-        grid-area: title-our-newest-stock;
+        letter-spacing: 0;
+        grid-area: title;
         display: flex;
         justify-content: center;
+        margin:0 2rem;
         background-color: #d0eef5;
         color:#03647a;
     }
-
-.chain {
-        background-color: #03647a96;
-        grid-area: chain;
+    .newest_products {
+        grid-area: newest_products;
         display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas: 
-        "chain-header"
-        "div"
-        ;
-        h3 {
-            background-color:#03647a60;
-            color:aliceblue;
-            grid-area: chain-header;
-            text-align: center;
-        }
-        div {
-            background-image: url(Pictures/ice-chain\ 55M_upscayl_5x_realesrgan-x4plus.png);
-            text-align: center;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            align-self: start;
-        }
-        p {
-            font-weight: bold;
-        }
-        h4,p {
-            background-color: #03647a96;
-            color:aliceblue;
-            letter-spacing: 0rem;
-        }
-        h4 {
-            font-size: 1.5rem;
-            color: #004453;
-        }
-    }
-
-.rolex {
-        background-color: #03647a96;
-        grid-area: rolex;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(2,max-content);
-        grid-template-areas: 
-        "rolex-header"
-        "div"
-        ;
-        h3 {
-            background-color:#03647a60;
-            color:aliceblue;
-            grid-area: rolex-header;
-            height: max-content;
-            text-align: center;
-            }
-        div {
-            background-image: url(Pictures/rolex-watch-25K_upscayl_5x_realesrgan-x4plus.png);
-            text-align: center;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-position: center;
-            align-self: start;
+        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+        gap:2rem;
+        overflow: hidden;
+        padding:0 2rem;
+        figure {
             justify-self: center;
-            grid-row: 2/3;
-
+            width: max-content;
+            transition: transform 500ms;
+            div {
+                width:20rem;
+                height:20rem;
+            }
+            figcaption {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background:linear-gradient(#028ead,rgb(10, 12, 12));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
         }
-        p {
-            font-weight: bold;
-        }
-        h4,p {
-            background-color: #03647a96;
-            color:aliceblue;
-            letter-spacing: 0rem;
-        }
-        h4 {
-            font-size: 1.5rem;
-            color: #004453;
+        figure:hover {
+            transform: scale(1.2);
         }
     }
-}
-
-.bling {
-        background-color: #03647a96;
-        grid-area: bling;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas: 
-        "bling-header"
-        "div"
-        ;
-        h3 {
-            background-color:#03647a60;
-            color:aliceblue;
-            grid-area: bling-header;
-            text-align: center;
-        }
-        div {
-            background-image: url(Pictures/ring-164_upscayl_5x_realesrgan-x4plus.png);
-            text-align: center;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            background-position: center;
-            align-self: start;
-        }
-        p {
-            font-weight: bold;
-        }
-        h4,p {
-            background-color: #03647a96;
-            color:aliceblue;
-            letter-spacing: 0rem;
-        }
-        h4 {
-            font-size: 1.5rem;
-            color: #004453;
-        }
-}
-
+}    
 footer {
-    background-color:#d0eef5;
-    .links {
+    margin-top: 1rem;
     background-color: #03647a96;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+   .links {
     margin:0 2rem;
-    display:grid;
-    grid-template-columns: repeat(7,1fr);
-    grid-template-rows: repeat(2,1fr);
-    column-gap:0.5rem;
-    
+    display: flex;
+    gap:2rem;
+    color: black;
+    a {
+        color:black;
     }
-    .my-instagram {
-        grid-row:1/2;
-        grid-column: 5/6;
+    i:hover {
+       text-decoration: underline; 
     }
-    .my-facebook {
-        grid-row:1/2;
-        grid-column:6/7;
-    }
-    .my-github {
-        grid-row:1/2;
-        grid-column: 7/8;
-    }
-    p {
-        grid-row:2/3;
-        grid-column: 6/8;
-        align-self: center;
-    }
-}
-
-@media (min-width:2180px) {
+   }
+   p {
+   margin-right:9rem;
+   }  
+}   
+@media (width >= 1920px) {
     html {
-    font-size: 30px;
+        font-size: 30px;
     }
 }
-
-@media (min-width:1780px) and (max-width:2180px) {
+@media (width >= 1440px) and (width<1920px) {
     html {
         font-size: 25px;
     }
 }
-
-@media (min-width:1440px) and (max-width:1780px) {
+@media (width >= 1024px) and (width<1440px) {
     html {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
-
-@media (min-width:1024px) and (max-width:1440px) {
+@media (width >= 768px) and (width<1024px) {
     html {
         font-size: 16px;
     }
-} 
-
-@media (min-width:1000px) and (max-width:1200px) {
-    #nav-bar {
-        font-size: 14px;
-    a {
-        font-size: 1em;
-    }
-    }
-} 
-
-@media (min-width:768px) and (max-width:1000px) {
-    html {
-        font-size: 15px;
-    }
-
-
-    header {
-        grid-template-areas: 
-        "logo-pic-div header-h1 header-h1 header-h1 header-h1 . . nav-bar nav-bar nav-bar nav-bar nav-bar"
-        ;
-
-        #nav-bar {
-            grid-area: nav-bar;
-        }
-    }
-
-
-
 }
-
-@media (min-width:768px) and (max-width:870px) {
-    
-    .above-header {
-        font-size: 13px;
-    
-        .above-header-navbar {
-            font-size: 1.5em;
-        }
-    
-        .above-header-intoduction h1 {
-            font-size: 3.5em;
-        }
-    
-        .above-header-intoduction p {
-            font-size: 1.5em;
-        }
-    }
-header {
-
-        font-size: 13px;
-    h1 {
-        font-size: 1.5em;
-    }
-    .logo-pic-div {
-        height:3em;
-        height:3em;
-    }
-}
-    .video-div {
-        font-size: 14px;
-        iframe {
-            width:25em;
-            height:14em;
-        }
-    }
-    .sidebar {
-        font-size:14px;
-        .parteners-sponsors-logo-div {
-            width:2em;
-            height:2em;
-        }
-    }
-}
-
-@media (max-width:870px) {
-    header {
-        grid-template-areas: 
-        "logo-pic-div header-h1 header-h1 header-h1 header-h1 header-1 nav-bar nav-bar nav-bar nav-bar nav-bar nav-bar"
-        ;
-        #nav-bar {
-            
-            grid-area: nav-bar;
-            grid-template-columns:repeat(3,1fr);
-            grid-template-areas: 
-            "first-of-type-a second-of-type-a third-of-type-a"
-            ;
-        
-         a:first-of-type {
-            grid-area: first-of-type-a;
-            
-        }
-
-        a:nth-of-type(2) {
-            grid-area: second-of-type-a;
-        }
-
-        a:last-of-type {
-            grid-area: third-of-type-a;
-        }
-        }
-    }
-}
-
-@media (min-width:480px) and (max-width:768px) {
-    html {
-        font-size: 14px;
-    }
-    .our-newest-stock {
-        border: 1px solid;
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-areas: 
-        "our-newest-stock-title our-newest-stock-title our-newest-stock-title our-newest-stock-title"
-        "chain chain rolex rolex"
-        "bling bling . ."
-        ;
-    }
-    .our-newest-stock h2 {
-        grid-area: our-newest-stock-title;
-    }
-
-    .chain {
-        grid-template-areas: chain;
-    }
-    
-    .rolex {
-        grid-template-areas: rolex;
-    }
-
-    .bling {
-        grid-area: bling;
-    }
-    .video-div {
-        font-size: 14px;
-        iframe {
-            width:25em;
-            height:14em;
-        }
-    }
-    .above-header {
-        font-size: 13px;
-    
-        .above-header-navbar {
-            font-size: 1.5em;
-        }
-    
-        .above-header-intoduction h1 {
-            font-size: 3.5em;
-        }
-    
-        .above-header-intoduction p {
-            font-size: 1.5em;
-        }
-    }
-
-    header {
-        font-size: 13px;
-    h1 {
-        font-size: 1.5em;
-    }
-    .logo-pic-div {
-        width:2em;
-        height:2em;
-    }
-}
-}
-
-@media (min-width:640px) and (max-width:720px) {
-
-    .sponsors,.parteners {
-        width:80%;
-        font-size: 12px;
-    }
-
-    .sponsors article,.parteners article {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .personal-contact {
-        width:80%;
-        text-align: center;
-    }
-
-    .input-form,.aboutus,.video-div {
-        margin:0 3rem 0 -3rem;
-    }
-    .our-newest-stock {
-        margin-right: 3rem;
-    }
-}
-
-@media (width<640px) {
+@media (width<768px) {
     .page-content {
-        background-color:#d0eef5;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: 100%;
         grid-template-areas: 
-        "header header header"
-        "input-form input-form input-form"
-        "aboutus aboutus aboutus"
-        "video-div video-div video-div"
-        "our-newest-stock our-newest-stock our-newest-stock"
-        "sidebar sidebar sidebar"
+        "header"
+        "input-form"
+        "aboutus"
+        "video-div"
+        "our-newest-stock"
+        "sidebar"
         ;
         gap:1rem;
-
-    header {
-        grid-area: header;
     }
-    .input-form {
-        grid-area: input-form;
-        margin: 0;
+    #header {
+        grid-area: header;
     }
     .aboutus {
         grid-area: aboutus;
-        margin: 0 2rem 0 2rem;
     }
     .video-div {
         grid-area: video-div;
-        margin: 0 2rem 0 2rem;
     }
-
+    .video-div,.aboutus {
+        margin-left: 2rem;
+    }
+    .input-form {
+        grid-area: input-form;
+    }
     .our-newest-stock {
         grid-area: our-newest-stock;
-        margin: 0 2rem 0 2rem;
     }
-    .sidebar {
+    aside {
         grid-area: sidebar;
-        margin:0 2rem 0 2rem;
+        margin: 0 2rem 1rem 2rem;
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(2,1fr);
         grid-template-areas: 
-        "header-parteners header-parteners header-sponsors header-sponsors"
-        "parteners parteners sponsors sponsors"
-        "personal-contact personal-contact . ."
+        "parteners_header sponsors_header"
+        "parteners sponsors"
+        "personal-contact ."
         ;
-
         h3:first-of-type {
-            grid-area: header-parteners;
-            justify-self: center;
+            grid-area:parteners_header;
+            text-align: center;
         }
         .parteners {
-            grid-area: parteners;
+            grid-area:parteners;
         }
-
         h3:last-of-type {
-            grid-area: header-sponsors;
-            justify-self: center;
+            grid-area:sponsors_header;
+            text-align: center;
         }
         .sponsors {
-            grid-area: sponsors;
+            grid-area:sponsors;
         }
         .personal-contact {
-            grid-area: personal-contact;
+            grid-area:personal-contact;
         }
     }
 }
-header {
-    font-size: 11.8px;
-h1 {
-    font-size: 1.5em;
+@media (width>=480px) and (width<768px) {
+    html {
+        font-size: 14px;
+    }   
 }
-.logo-pic-div {
-    width:2em;
-    height:2em;
-}
-}
-.our-newest-stock {
-    grid-template-columns: 100%;
-    grid-template-areas: 
-    "top-new-stock-header"
-    "chain"
-    "rolex"
-    "bling"
-    ;
-    h2 {
-        grid-area: top-new-stock-header;
-    }
-    .chain {
-        grid-area: chain;
-    }
-    .rolex {
-        grid-area: rolex;
-    }
-    .bling {
-        grid-area: bling;
-    }
-    .chain,.rolex,.bling {
-        width:80%;
-        justify-self: center;
-    }
-}
-}
-
-@media (width<480px) {
+@media (width<480px) and (width>=320px) {
     html {
         font-size: 12px;
     }
-
-
-        .video-div {
-            font-size: 9px;
-            iframe {
-                width:25em;
-                height:14em;
-            }
-        }
-        .above-header {
-            font-size: 15px;
-            h1 {
-                font-size: 1.5em;
-            }
-            p {
-                font-size: 0.8em;
-            }
-            nav ul {
-                font-size: 1em;
-                flex-wrap: wrap;
-                gap:0.5em;
-            }
-        }
-        header {
-            font-size:13px;
-            h1 {
-                font-size: 0.8em;
-            }
-            .logo-pic-div {
-                width:2em;
-                height:2em;
-            }
-            nav {
-                font-size: 0.6em;
-            }
-        }
-        #email {
-            font-size: 10px;
-        }
-        .sponsors article,.parteners article {
-            display:flex;
+}
+@media (width<480px) {
+aside {
+    .sponsors,.parteners {
+        article {
+            display: flex;
             flex-direction: column;
             align-items: center;
         }
-    
+    } 
+}
+}
+@media(width<320px) {
+    html {
+        font-size: 10px;
+    }
 }
