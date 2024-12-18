@@ -475,7 +475,7 @@ aside {
         font-size: 10px;
     }
 }
-@media (height<320px) {
+@media (height <= 320px) {
     header {
         position: relative !important;
     }
