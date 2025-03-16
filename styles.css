@@ -8,7 +8,7 @@ html {
     font-family: sans-serif;
     letter-spacing: 0.1rem;
     line-height: 2rem;
-}
+} 
 body {
     background-color:#d0eef5;
 }
@@ -31,6 +31,7 @@ a:hover {
     background-repeat: no-repeat;
     background-size:cover; 
     background-position: center;
+    background-attachment: fixed;
     height:100vh;
 }
 .above-header {
@@ -473,10 +474,5 @@ aside {
 @media(width<320px) {
     html {
         font-size: 10px;
-    }
-}
-@media (height <= 320px) {
-    header {
-        position: relative !important;
     }
 }
